@@ -1,0 +1,15 @@
+{% extends 'loans/base.html' %}
+
+{% block title %}Make Loan Payment{% endblock %}
+
+{% block content %}
+<h1>Make Loan Payment</h1>
+<form method="post" action="{% url 'make_payment' loan_id %}">
+    {% csrf_token %}
+    <label for="amount">Amount:</label>
+    <input type="text" id="amount" name="amount">
+    <label for="date">Date:</label>
+    <input type="text" id="date" name="date">
+    <button type="submit">Pay</button>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'loans/base.html' %}
+
+{% block title %}Apply for Loan{% endblock %}
+
+{% block content %}
+<h1>Apply for Loan</h1>
+<form method="post" action="{% url 'apply_loan' %}">
+    {% csrf_token %}
+    <label for="amount">Amount:</label>
+    <input type="text" id="amount" name="amount">
+    <label for="term">Term (months):</label>
+    <input type="text" id="term" name="term">
+    <button type="submit">Apply</button>
+</form>
+{% endblock %}

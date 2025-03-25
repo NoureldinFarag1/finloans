@@ -1,0 +1,14 @@
+{% extends 'loans/base.html' %}
+
+{% block title %}Loan List{% endblock %}
+
+{% block content %}
+<h1>Loan List</h1>
+<ul>
+    {% for loan in loans %}
+        <li>
+            <a href="{% url 'loan_detail_view' loan.id %}">Loan {{ loan.id }}: {{ loan.amount }} - {{ loan.customer.user.username }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

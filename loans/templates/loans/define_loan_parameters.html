@@ -1,0 +1,23 @@
+{% extends 'loans/base.html' %}
+
+{% block title %}Define Loan Parameters{% endblock %}
+
+{% block content %}
+<h1>Define Loan Parameters</h1>
+<form method="post" action="{% url 'define_loan_parameters' %}">
+    {% csrf_token %}
+    <label for="min_amount">Min Amount:</label>
+    <input type="text" id="min_amount" name="min_amount">
+    <label for="max_amount">Max Amount:</label>
+    <input type="text" id="max_amount" name="max_amount">
+    <label for="min_interest_rate">Min Interest Rate:</label>
+    <input type="text" id="min_interest_rate" name="min_interest_rate">
+    <label for="max_interest_rate">Max Interest Rate:</label>
+    <input type="text" id="max_interest_rate" name="max_interest_rate">
+    <label for="min_duration">Min Duration (months):</label>
+    <input type="text" id="min_duration" name="min_duration">
+    <label for="max_duration">Max Duration (months):</label>
+    <input type="text" id="max_duration" name="max_duration">
+    <button type="submit">Define</button>
+</form>
+{% endblock %}

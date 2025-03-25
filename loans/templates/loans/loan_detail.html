@@ -1,0 +1,15 @@
+{% extends 'loans/base.html' %}
+
+{% block title %}Loan Detail{% endblock %}
+
+{% block content %}
+<h1>Loan Detail</h1>
+<p>Loan ID: {{ loan.id }}</p>
+<p>Provider: {{ loan.provider.user.username }}</p>
+<p>Customer: {{ loan.customer.user.username }}</p>
+<p>Amount: {{ loan.amount }}</p>
+<p>Interest Rate: {{ loan.interest_rate }}</p>
+<p>Start Date: {{ loan.start_date }}</p>
+<p>End Date: {{ loan.end_date }}</p>
+<p>Approved: {{ loan.approved }}</p>
+{% endblock %}
